@@ -1,3 +1,21 @@
+.ion-color-background1 {
+	--ion-color-base: var(--ion-color-background1);
+	--ion-color-base-rgb: var(--ion-color-background1-rgb);
+	--ion-color-contrast: var(--ion-color-background1-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-background1-contrast-rgb);
+	--ion-color-shade: var(--ion-color-background1-shade);
+	--ion-color-tint: var(--ion-color-background1-tint);
+}
+
+.ion-color-castanhochocolate {
+	--ion-color-base: var(--ion-color-castanhochocolate);
+	--ion-color-base-rgb: var(--ion-color-castanhochocolate-rgb);
+	--ion-color-contrast: var(--ion-color-castanhochocolate-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-castanhochocolate-contrast-rgb);
+	--ion-color-shade: var(--ion-color-castanhochocolate-shade);
+	--ion-color-tint: var(--ion-color-castanhochocolate-tint);
+}
+
 #container {
   text-align: center;
 
@@ -24,4 +42,26 @@
 
 #container a {
   text-decoration: none;
+}
+
+
+ion-content {
+  --background: var(--ion-color-background1);
+  
+}
+
+#Titulo {
+  font-size: 50px; /* Increase font size */
+  text-align: center;
+  line-height: 250px;
+  font-weight: bold; /* Make text bold */
+  width: 100%; 
+}
+
+
+.square {
+  width: 20px;
+  background-color: red;
+  top: 50%;
+  left: 50%;
 }
