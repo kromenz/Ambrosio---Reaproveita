@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { EntrarPageRoutingModule } from './entrar-routing.module';
 
@@ -13,7 +14,8 @@ import { EntrarPage } from './entrar.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EntrarPageRoutingModule
+    EntrarPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [EntrarPage]
 })
