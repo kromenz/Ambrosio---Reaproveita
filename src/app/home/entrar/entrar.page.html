@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Entrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="primary">
+  <form color="primary">
+    <ion-item lines="full" color="primary">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-item lines="full" color="primary">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['../']" type="submit" color="danger" expand="block" color="secondary">Entrar</ion-button>
+        <a [routerLink]="['entrar/forget-password']" class="cor">Esqueceu-se da palavra-passe?</a>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
