@@ -6,38 +6,8 @@
     <ion-title>Entrar</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content color="primary">
-  <form [formGroup]="entrarForm" (ngSubmit)="submitForm()" novalidate>
 
-    <ion-item lines="full" color="primary">
-      <ion-label position="floating">Username</ion-label>
-      <ion-input type="text" formControlName="user" required></ion-input>
-    </ion-item>
-    <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && entrarForm.controls['user'].errors?.['required']">
-      Username é de preenchimento obrigatório
-    </ion-text>
-    <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && entrarForm.controls['user'].errors?.['pattern']">
-      Username inválido
-    </ion-text> 
-    
-    <ion-item lines="full" color="primary">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" formControlName="pass" required></ion-input>
-    </ion-item>
-    <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && entrarForm.controls['pass'].errors?.['required']">
-      Password é de preenchimento obrigatório
-    </ion-text>
-    <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && entrarForm.controls['pass'].errors?.['pattern']">
-      Password inválida
-    </ion-text>
-
-      <ion-col>
-        <ion-row>
-          <ion-col>
-            <ion-button type="submit" color="secondary" expand="block" color="secondary">Submeter</ion-button>
-          </ion-col>
-        </ion-row>
-        <a [routerLink]="['entrar/forget-password']" class="cor">Esqueceu-se da palavra-passe?</a>
-      </ion-col>
-  </form>
+  
 </ion-content>
