@@ -24,3 +24,26 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Define a altura total da página */
+  }
+
+  #Ferrero {
+    transform: scale(0.5);
+    position: absolute;
+    top: 80px;
+    left: 5px;
+  }
+  
+  #Ambrósio {
+    transform: scale(0.35);
+    position: absolute;
+    top: 215px;
+    left: 5px;
+  }

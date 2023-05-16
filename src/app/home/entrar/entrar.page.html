@@ -3,11 +3,56 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button id="Help" (click)="onClick('home/ajuda')"><ion-icon name="help" id="help_icon" slot="end"></ion-icon></ion-button>
+    </ion-buttons>
     <ion-title>Entrar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="primary">
 
-  
-</ion-content>
+  <img src="assets/Ferrero Logo.png" alt="Ferrero" id="Ferrero">
+  <img src="assets/Ambrósio (Re)Aproveita.png" alt="Ambrósio" id="Ambrósio">
+
+  <div class="center-form">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Criar Conta</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <form [formGroup]="logForm" (ngSubmit)="submitForm()" novalidate>
+
+      <ion-item lines="full" color="primary">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" formControlName="username" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['username'].errors?.['required']">
+        Username é de preenchimento obrigatório
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['username'].errors?.['pattern']">
+        Username inválido
+      </ion-text> 
+      
+      <ion-item lines="full" color="primary">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['password'].errors?.['required']">
+        Password é de preenchimento obrigatório
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['password'].errors?.['pattern']">
+        Password inválida
+      </ion-text> 
+      
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" expand="block" color="secondary" (click)="onClick('home/entrar/pag-ini')">Submeter</ion-button>
+        </ion-col>
+      </ion-row>
+      <a [routerLink]="['entrar/forget-password']" class="cor">Esqueceu-se da palavra-passe?</a>
+    </form>
+  </div>
+
+  </ion-content>

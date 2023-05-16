@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'forget-password',
     loadChildren: () => import('./forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
-  }
+  },
+  {
+    path: 'pag-ini',
+    loadChildren: () => import('./pag-ini/pag-ini.module').then( m => m.PagIniPageModule)
+  },
 ];
 
 @NgModule({

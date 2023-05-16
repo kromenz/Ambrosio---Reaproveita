@@ -53,5 +53,9 @@ export class CriarContaPage implements OnInit {
   get formControls() { 
     return this.CriarForm.controls;
   }
+
+  onClick(x: any){
+    this.router.navigateByUrl(x)
+  }
 }
 
