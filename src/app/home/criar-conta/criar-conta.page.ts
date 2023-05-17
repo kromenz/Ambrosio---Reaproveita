@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserDataService, Users } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-criar-conta',
@@ -14,7 +13,7 @@ export class CriarContaPage implements OnInit {
   CriarForm: FormGroup;
   isSubmitted: boolean;
 
-  constructor(private router: Router, private userData: UserDataService){
+  constructor(private router: Router){
     this.CriarForm = new FormGroup({
       nome_p: new FormControl('', [Validators.required, Validators.minLength(2)]),
       apelido:  new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -33,14 +32,8 @@ export class CriarContaPage implements OnInit {
     if (!this.CriarForm.valid) {
       return false;
     } else {
-      const valoresFormulario = this.CriarForm.value;
-
-      const user: Users = {
-        username: valoresFormulario.username,
-        password: valoresFormulario.password
-      };
-
-      this.userData.addUser(user);
+      
+      
       // Redirecionar para a página inicial
       this.router.navigate(['/home']);
       return true

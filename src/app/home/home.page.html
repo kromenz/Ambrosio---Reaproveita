@@ -4,7 +4,6 @@
   <img src="assets/Ambrósio (Re)Aproveita.png" alt="Ambrósio" id="Ambrósio">
 
   <ion-button id="Help" (click)="onClick('home/ajuda')"><ion-icon name="help" id="help_icon"></ion-icon></ion-button>
-  <!-- <ion-button id="Register" fill="outline" size="default" routerLink="./criar-conta">Criar Conta</ion-button> -->
 
   <div class="center-form">
     <ion-header collapse="condense">
@@ -17,7 +16,7 @@
 
       <ion-item lines="full" color="primary">
         <ion-label position="floating">Username</ion-label>
-        <ion-input type="text" formControlName="username" required></ion-input>
+        <ion-input type="text" formControlName="username"></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['username'].errors?.['required']">
         Username é de preenchimento obrigatório
