@@ -9,11 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'forget-password',
-    loadChildren: () => import('./entrar/forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
-  },
-  {
-    path: 'entrar',
-    loadChildren: () => import('./entrar/entrar.module').then( m => m.EntrarPageModule)
+    loadChildren: () => import('./forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
   },
   {
     path: 'criar-conta',
@@ -22,6 +18,10 @@ const routes: Routes = [
   {
     path: 'ajuda',
     loadChildren: () => import('./ajuda/ajuda.module').then( m => m.AjudaPageModule)
+  },
+  {
+    path: 'app-main',
+    loadChildren: () => import('./app-main/app-main.module').then( m => m.AppMainPageModule)
   }
 ];
 

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pag-ini',
-  templateUrl: './pag-ini.page.html',
-  styleUrls: ['./pag-ini.page.scss'],
+  selector: 'app-app-main',
+  templateUrl: './app-main.page.html',
+  styleUrls: ['./app-main.page.scss'],
 })
-export class PagIniPage implements OnInit {
+export class AppMainPage implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -16,4 +16,5 @@ export class PagIniPage implements OnInit {
   onClick(x: any){
     this.router.navigateByUrl(x)
   }
+
 }

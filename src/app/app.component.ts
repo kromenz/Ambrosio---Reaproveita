@@ -10,5 +10,9 @@ export class AppComponent {
 
   constructor(public router: Router) {}
 
+
+  onClick(x: any){
+    this.router.navigateByUrl(x)
+  }
   
 }

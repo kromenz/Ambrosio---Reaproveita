@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PagIniPageRoutingModule } from './pag-ini-routing.module';
+import { AppMainPageRoutingModule } from './app-main-routing.module';
 
-import { PagIniPage } from './pag-ini.page';
+import { AppMainPage } from './app-main.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PagIniPageRoutingModule
+    AppMainPageRoutingModule
   ],
-  declarations: [PagIniPage]
+  declarations: [AppMainPage]
 })
-export class PagIniPageModule {}
+export class AppMainPageModule {}
