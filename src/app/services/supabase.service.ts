@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
-import { Item } from './item';
-import { User } from './user';
-import { Linha_Lista } from './linha_lista';
-import { Lista } from './lista';
+import { Item, Linha_Lista, User, Lista } from './entidades';
 
 
 @Injectable({

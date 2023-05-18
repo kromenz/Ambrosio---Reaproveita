@@ -34,6 +34,7 @@ export class CriarContaPage implements OnInit {
     } else {
       
       
+      
       // Redirecionar para a página inicial
       this.router.navigate(['/home']);
       return true

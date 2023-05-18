@@ -42,8 +42,10 @@
       </ion-text> 
 
       <ion-item lines="full" color="primary">
-        <ion-label position="floating">Descrição</ion-label>
-        <ion-input type="descricao" formControlName="descricao" required></ion-input>
+        <ion-textarea>
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input type="descricao" formControlName="descricao" required></ion-input>
+        </ion-textarea>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && helpForm.controls['descricao'].errors?.['required']">
         Descrição é de preenchimento obrigatório

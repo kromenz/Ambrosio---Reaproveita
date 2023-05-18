@@ -27,8 +27,9 @@
       
       <ion-item lines="full" color="primary">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" formControlName="password" required></ion-input>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
       </ion-item>
+
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['password'].errors?.['required']">
         Password é de preenchimento obrigatório
       </ion-text>
@@ -38,13 +39,13 @@
       
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block" color="secondary">Entrar</ion-button>
+          <ion-button type="submit" color="danger" expand="block" color="secondary" class="margem">Entrar</ion-button>
         </ion-col>
       </ion-row>
     </form>
-    <a [routerLink]="['forget-password']" class="cor">Esqueceu-se da palavra-passe?</a>
-    <a class="cor">------------------- ou ------------------</a>
-    <a [routerLink]="['criar-conta']" class="cor">Criar Conta</a>
+    <a [routerLink]="['forget-password']" class="cor margem">Esqueceu-se da palavra-passe?</a>
+    <ion-button [routerLink]="['criar-conta']" fill="outline" type="submit" shape="round" color="danger" expand="block" color="secondary" class="margem">Criar Conta</ion-button>
+    
   </div>
 
 </ion-content>
