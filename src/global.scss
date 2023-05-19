@@ -117,3 +117,13 @@
   .margem{
     margin: 16px;
   }
+
+  .md .centered-p {
+    text-align: center;
+    margin-left: -9%
+  }
+
+  @font-face {   
+    font-family: 'Varela';  //This is what we are going to call  
+    src: url('./assets/fonts/Varela-Regular.ttf');
+  }

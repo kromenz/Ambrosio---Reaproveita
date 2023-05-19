@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonAccordionGroup } from '@ionic/angular';
 
 @Component({
   selector: 'app-lista',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ListaPage implements OnInit {
 
+  @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup | undefined;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -15,5 +17,8 @@ export class ListaPage implements OnInit {
 
   onClick(x: any){
     this.router.navigateByUrl(x)
+  }
+
+  createList(){
   }
 }
