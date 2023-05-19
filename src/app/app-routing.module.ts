@@ -11,6 +11,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'home/app-main/outros',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   
 ];
 

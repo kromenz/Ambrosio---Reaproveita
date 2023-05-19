@@ -16,10 +16,6 @@ const routes: Routes = [
         loadChildren: () => import('./produtos/produtos.module').then( m => m.ProdutosPageModule)
       },
       {
-        path: 'outros',
-        loadChildren: () => import('./outros/outros.module').then( m => m.OutrosPageModule)
-      },
-      {
         path: 'planeamento',
         loadChildren: () => import('./planeamento/planeamento.module').then( m => m.PlaneamentoPageModule)
       },
@@ -28,7 +24,6 @@ const routes: Routes = [
         redirectTo: '/planeamento',
         pathMatch: 'full',
       },
-
     ]
   },
   
