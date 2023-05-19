@@ -30,7 +30,7 @@ export class HomePage {
     } else {
 
       // Redirecionar para a página inicial
-      this.router.navigate(['home/app-main']);
+      this.router.navigate(['home/app-main/planeamento']);
       return true
     }
   }

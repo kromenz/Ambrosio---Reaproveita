@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { AppMainPageRoutingModule } from './app-main-routing.module';
-import { AppMainPage } from './app-main.page';
 
+import { IonicModule } from '@ionic/angular';
+
+import { PlaneamentoPageRoutingModule } from './planeamento-routing.module';
+
+import { PlaneamentoPage } from './planeamento.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AppMainPageRoutingModule,
+    PlaneamentoPageRoutingModule
   ],
-  declarations: [AppMainPage]
+  declarations: [PlaneamentoPage]
 })
-export class AppMainPageModule {}
+export class PlaneamentoPageModule {}

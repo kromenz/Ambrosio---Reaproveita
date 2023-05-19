@@ -37,14 +37,14 @@
   #Ferrero {
     transform: scale(0.5);
     position: absolute;
-    top: 80px;
-    left: 5px;
+    top: 70px;
+    left: 25px;
   }
   
   #Ambrósio {
     transform: scale(0.35);
     position: absolute;
-    top: 180px;
+    top: 155px;
     left: 5px;
   }
 
@@ -112,4 +112,8 @@
     overflow-x: scroll!important;
     overflow-y: hidden;
     width: 100%;
+  }
+
+  .margem{
+    margin: 16px;
   }

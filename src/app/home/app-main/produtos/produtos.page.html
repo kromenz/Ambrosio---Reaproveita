@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button [routerLink]= ><ion-icon name="help" id="help_icon" slot="end"></ion-icon></ion-button>
-    </ion-buttons>
-    <ion-title>Criar Conta</ion-title>
-  </ion-toolbar>
+    <ion-row style="display: flex;  justify-content: space-between;">
+      <div>
+        <ion-button id="Help" (click)="onClick('home/ajuda')">
+          <ion-icon slot="icon-only" name="help" id="help_icon"></ion-icon>
+        </ion-button>
+      </div>
+
+      <ion-title color="secondary" class="ion-text-center">
+        <h2>PQP</h2>
+      </ion-title>
+
+      <div>
+        <ion-button (click)="onClick('home')" id="Logout">
+          <ion-icon slot="icon-only" name="log-out-outline" id="logout"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-row>
 </ion-header>
-<ion-content color="primary">
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">produtos</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
