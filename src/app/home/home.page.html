@@ -43,8 +43,8 @@
         </ion-col>
       </ion-row>
     </form>
-    <a [routerLink]="['forget-password']" class="cor margem">Esqueceu-se da palavra-passe?</a>
-    <ion-button [routerLink]="['criar-conta']" fill="outline" type="submit" shape="round" color="danger" expand="block" color="secondary" class="margem">Criar Conta</ion-button>
+    <a (click)="onClick('home/forget-password')" class="cor margem">Esqueceu-se da palavra-passe?</a>
+    <ion-button (click)="onClick('home/criar-conta')" fill="outline" type="submit" shape="round" color="danger" expand="block" color="secondary" class="margem">Criar Conta</ion-button>
     
   </div>
 

@@ -1,41 +1,39 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage-angular';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-    isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-      true
-    );
-    private users: any[] = [];
+    url = 'http://localhost:3000/users'
 
-    constructor(private storage: Storage) {
-      this.init();
+    constructor(private http: HttpClient) {
+
     }
 
-    async init() {
-      await this.storage.create();
-      const storedUsers = await this.storage.get('users');
-      if (storedUsers) {
-        this.users = storedUsers;
-      }
+    getAllUsers(){
+      return this.http.get(this.url);
     }
 
-    loginUser(username: string, password: string): boolean {
-      const user = this.users.find(u => u.username === username && u.password === password);
-      if (user) {
-        this.isAuthenticated.next(true); // Define o status de autenticação como verdadeiro
-        return true;
-      } else {
-        this.isAuthenticated.next(false); // Define o status de autenticação como falso
-        return false;
-      }
+    saveUserData(data: any){
+      console.log(data);
+      return this.http.post(this.url, data);
     }
-  
-    logoutUser() {
-      this.isAuthenticated.next(false); // Define o status de autenticação como falso ao fazer logout
+
+    checkLogin(username: string, password: string){
+      return this.http.get<any>(this.url).toPromise().then(data => {
+        console.log('Dados do arquivo:', data);
+        if (data && data.users && Array.isArray(data.users)) {
+          const matchingUser = data.users.find((user: any) =>
+            user.username === username && user.password === password
+          );
+          console.log('Usuário correspondente:', matchingUser);
+          return matchingUser || null;
+        } else {
+          return null;
+        }
+      });
     }
+
 }

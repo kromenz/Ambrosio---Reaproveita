@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Planeamento, PlaneamentoService } from 'src/app/services/planeamento.service';
 
 @Component({
   selector: 'app-planeamento',
@@ -8,13 +9,20 @@ import { Router } from '@angular/router';
 })
 export class PlaneamentoPage implements OnInit {
 
-  constructor(private router: Router) { }
+  listData: Planeamento[] = [];
+
+  constructor(private router: Router, private planSV: PlaneamentoService) { }
 
   ngOnInit() {
+    this.loadData();
   }
 
   onClick(x: any){
     this.router.navigateByUrl(x)
+  }
+
+  async loadData(){
+    this.listData = await this.planSV.getPlaneamento();
   }
 
 }

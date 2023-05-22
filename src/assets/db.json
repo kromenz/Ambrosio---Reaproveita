@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Rafael",
+      "apelido": "André",
+      "email": "rafael.pires.andre@ipvc.pt",
+      "username": "kromenz",
+      "password": "123"
+    },
+    {
+      "nome_p": "Diogo",
+      "apelido": "Reis",
+      "username": "diogo",
+      "password": "123",
+      "email": "ns@ipvc.pt",
+      "id": 2
+    }
+  ]
+}

@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content color="primary">
-
+  
   <img src="assets/Ferrero Logo.png" alt="Ferrero" id="Ferrero">
   <img src="assets/Ambrósio (Re)Aproveita.png" alt="Ambrósio" id="Ambrósio">
 
@@ -82,6 +82,12 @@
           <ion-button type="submit" color="danger" expand="block" color="secondary">Submeter</ion-button>
         </ion-col>
       </ion-row>
+      <div class="alert-container">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="mensagem">
+          Utilizador criado com<strong> sucesso</strong>, voltar à
+          <button (click)="removeMensagem()" type="button" data-bs-dismiss="alert" aria-label="Close"> página inicial</button>
+        </div>
+      </div>
     </form>
   </div>
 </ion-content>
