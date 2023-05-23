@@ -40,7 +40,7 @@ export class HomePage {
       console.log(username + " " + password)
 
       
-      /* this.data.checkLogin(username, password).then(user => {
+      this.data.checkLogin(username, password).then(user => {
         console.log(user);
         if (user) {
           // As informações de login são válidas, redirecione o usuário para a página inicial
@@ -50,7 +50,7 @@ export class HomePage {
           // As informações de login são inválidas, exiba uma mensagem de erro
           console.log('Informações de login inválidas');
         }
-      }); */
+      });
 
       return true;
     }

@@ -1,24 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {AngularFireAuth} from '@angular/fire/compat/auth'
-import {AngularFirestore} from '@angular/fire/compat/firestore'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-   /*  url = 'http://localhost:3000/users' */
+    url = 'http://localhost:3000/users'
 
-    constructor(private http: HttpClient, 
-      public firestore: AngularFirestore,
-      public auth: AngularFireAuth
-      ) 
-    {
+    constructor(private http: HttpClient){
       
     }
 
-    /* getAllUsers(){
+    getAllUsers(){
       return this.http.get(this.url);
     }
 
@@ -39,7 +33,6 @@ export class AuthenticationService {
           return false;
         }        
       });
-    } */
-
+    }
 
 }

@@ -24,7 +24,7 @@
 
       <ion-item lines="full" color="primary">
         <ion-label position="floating">Nome Próprio</ion-label>
-        <ion-input type="text" formControlName="nome_p" required></ion-input>
+        <ion-input type="text" formControlName="nome" required></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['nome'].errors?.['required']">
         Nome Próprio é de preenchimento obrigatório
@@ -79,7 +79,7 @@
       
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block" color="secondary">Submeter</ion-button>
+          <ion-button strong="true" type="submit" color="danger" expand="block" color="secondary" [disabled]="CriarForm.invalid">Submeter</ion-button>
         </ion-col>
       </ion-row>
       <div class="alert-container">

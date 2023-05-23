@@ -28,9 +28,9 @@ export class CriarContaPage implements OnInit {
   }
 
   ngOnInit(): void {
-    /* this.data.getAllUsers().subscribe((allData) =>{
+    this.data.getAllUsers().subscribe((allData) =>{
       this.userData = allData;
-    }) */
+    })
   }
 
   submitForm() {
@@ -43,7 +43,7 @@ export class CriarContaPage implements OnInit {
       const password = this.CriarForm.value.password
 
       
-      /* this.saveData(); */
+      this.saveData();
 
       // Redirecionar para a página inicial
       
@@ -61,11 +61,11 @@ export class CriarContaPage implements OnInit {
     this.router.navigateByUrl(x)
   }
 
-  /* saveData(){
+  saveData(){
     this.data.saveUserData(this.CriarForm.value).subscribe((result) =>{
       this.mensagem = true;
     });
-  } */
+  }
 
 
   removeMensagem(){
