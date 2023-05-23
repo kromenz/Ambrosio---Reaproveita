@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {AngularFireAuth} from '@angular/fire/compat/auth'
+import {AngularFirestore} from '@angular/fire/compat/firestore'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-    url = 'http://localhost:3000/users'
+   /*  url = 'http://localhost:3000/users' */
 
-    constructor(private http: HttpClient) {
-
+    constructor(private http: HttpClient, 
+      public firestore: AngularFirestore,
+      public auth: AngularFireAuth
+      ) 
+    {
+      
     }
 
-    getAllUsers(){
+    /* getAllUsers(){
       return this.http.get(this.url);
     }
 
@@ -24,16 +30,16 @@ export class AuthenticationService {
     checkLogin(username: string, password: string){
       return this.http.get<any>(this.url).toPromise().then(data => {
         console.log('Dados do arquivo:', data);
-        if (data && data.users && Array.isArray(data.users)) {
-          const matchingUser = data.users.find((user: any) =>
-            user.username === username && user.password === password
-          );
-          console.log('Usuário correspondente:', matchingUser);
-          return matchingUser || null;
+        if (data && Array.isArray(data) && data.find((user: any) => 
+        user.username === username && user.password === password)) {
+          // Usuário correspondente encontrado
+          return true;
         } else {
-          return null;
-        }
+          // Usuário não encontrado
+          return false;
+        }        
       });
-    }
+    } */
+
 
 }

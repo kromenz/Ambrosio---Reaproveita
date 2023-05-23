@@ -26,10 +26,10 @@
         <ion-label position="floating">Nome Próprio</ion-label>
         <ion-input type="text" formControlName="nome_p" required></ion-input>
       </ion-item>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['nome_p'].errors?.['required']">
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['nome'].errors?.['required']">
         Nome Próprio é de preenchimento obrigatório
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['nome_p'].errors?.['minlength']">
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['nome'].errors?.['minlength']">
         Nome Próprio deverá ter pelo menos 2 caracteres
       </ion-text>
 

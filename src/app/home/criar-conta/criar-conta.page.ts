@@ -18,7 +18,7 @@ export class CriarContaPage implements OnInit {
 
   constructor(private router: Router, private data: AuthenticationService){
     this.CriarForm = new FormGroup({
-      nome_p: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      nome: new FormControl('', [Validators.required, Validators.minLength(2)]),
       apelido:  new FormControl('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
       username:  new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -28,9 +28,9 @@ export class CriarContaPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data.getAllUsers().subscribe((allData) =>{
+    /* this.data.getAllUsers().subscribe((allData) =>{
       this.userData = allData;
-    })
+    }) */
   }
 
   submitForm() {
@@ -39,7 +39,11 @@ export class CriarContaPage implements OnInit {
       return false;
     } else {
       
-      this.saveData();
+      const username = this.CriarForm.value.username
+      const password = this.CriarForm.value.password
+
+      
+      /* this.saveData(); */
 
       // Redirecionar para a página inicial
       
@@ -57,11 +61,12 @@ export class CriarContaPage implements OnInit {
     this.router.navigateByUrl(x)
   }
 
-  saveData(){
+  /* saveData(){
     this.data.saveUserData(this.CriarForm.value).subscribe((result) =>{
       this.mensagem = true;
     });
-  }
+  } */
+
 
   removeMensagem(){
     this.mensagem = false;

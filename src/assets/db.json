@@ -9,12 +9,12 @@
       "password": "123"
     },
     {
-      "nome_p": "Diogo",
+      "id": 2,
+      "nome": "Diogo",
       "apelido": "Reis",
-      "username": "diogo",
-      "password": "123",
       "email": "ns@ipvc.pt",
-      "id": 2
+      "username": "diogo",
+      "password": "123"
     }
   ]
 }
