@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/auth/authentication.service';
 
+
 @Component({
   selector: 'app-criar-conta',
   templateUrl: './criar-conta.page.html',
@@ -16,7 +17,11 @@ export class CriarContaPage implements OnInit {
   userData: any = [];
   mensagem: boolean = false;
 
-  constructor(private router: Router, private data: AuthenticationService){
+
+  constructor(
+    private router: Router, 
+    private data: AuthenticationService,
+    ){
     this.CriarForm = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(2)]),
       apelido:  new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -25,6 +30,7 @@ export class CriarContaPage implements OnInit {
       password:  new FormControl('', [Validators.required, Validators.minLength(2)]),
     });
     this.isSubmitted = false;
+
   }
 
   ngOnInit(): void {
@@ -42,7 +48,6 @@ export class CriarContaPage implements OnInit {
       const username = this.CriarForm.value.username
       const password = this.CriarForm.value.password
 
-      
       this.saveData();
 
       // Redirecionar para a página inicial
