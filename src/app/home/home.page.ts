@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../services/auth/authentication.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 @Component({
@@ -13,15 +13,15 @@ export class HomePage {
 
   logForm: FormGroup;
   isSubmitted: boolean;
-
   logData: any = [];
 
-  constructor(private router: Router, 
-    private data: AuthenticationService
+  constructor(
+    private router: Router, 
+    private auth: AngularFireAuth
     ){
     this.logForm = new FormGroup({
-      username:  new FormControl('', [Validators.required, Validators.minLength(2)]),
-      password:  new FormControl('', [Validators.required, Validators.minLength(2)]),
+      email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+      password:  new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
     this.isSubmitted = false;
   }
@@ -29,33 +29,24 @@ export class HomePage {
   ngOnInit() {
   }
 
-  submitForm() {
+  async submitForm() {
     this.isSubmitted = true;
     if (!this.logForm.valid) {
       return false;
     } else {
 
-      const username = this.logForm.value.username;
+      const email = this.logForm.value.email;
       const password = this.logForm.value.password;
-      console.log(username + " " + password)
+      console.log(email + " " + password)
 
-      
-      this.data.checkLogin(username, password).then(user => {
-        console.log(user);
-        if (user) {
-          // As informações de login são válidas, redirecione o usuário para a página inicial
-          this.router.navigate(['home/app-main/planeamento']);
-        } else {
-          console.log(user)
-          // As informações de login são inválidas, exiba uma mensagem de erro
-          console.log('Informações de login inválidas');
-        }
-      });
+      if(await this.auth.signInWithEmailAndPassword(email, password)){
+        this.router.navigate(['home/app-main/planeamento']);
+      }
+
 
       return true;
     }
   }
-
   
   // bind (ligação) de uma propriedade de um objeto a uma função
   // quando a propriedade é "invocada" a função getter é utilizada

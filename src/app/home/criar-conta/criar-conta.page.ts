@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/auth/authentication.service';
 
 
 @Component({
@@ -20,35 +20,34 @@ export class CriarContaPage implements OnInit {
 
   constructor(
     private router: Router, 
-    private data: AuthenticationService,
+    private auth: AngularFireAuth
     ){
     this.CriarForm = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(2)]),
       apelido:  new FormControl('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
-      username:  new FormControl('', [Validators.required, Validators.minLength(2)]),
-      password:  new FormControl('', [Validators.required, Validators.minLength(2)]),
+      password:  new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
     this.isSubmitted = false;
 
   }
 
-  ngOnInit(): void {
-    this.data.getAllUsers().subscribe((allData) =>{
-      this.userData = allData;
-    })
+  ngOnInit(){
+
   }
 
-  submitForm() {
+  async submitForm() {
     this.isSubmitted = true;
     if (!this.CriarForm.valid) {
       return false;
     } else {
       
-      const username = this.CriarForm.value.username
+      const email = this.CriarForm.value.email
       const password = this.CriarForm.value.password
 
-      this.saveData();
+      if(await this.auth.createUserWithEmailAndPassword(email, password)){
+        this.mensagem = true
+      }
 
       // Redirecionar para a página inicial
       
@@ -65,13 +64,6 @@ export class CriarContaPage implements OnInit {
   onClick(x: any){
     this.router.navigateByUrl(x)
   }
-
-  saveData(){
-    this.data.saveUserData(this.CriarForm.value).subscribe((result) =>{
-      this.mensagem = true;
-    });
-  }
-
 
   removeMensagem(){
     this.mensagem = false;

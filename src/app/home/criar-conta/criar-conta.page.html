@@ -54,17 +54,6 @@
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['email'].errors?.['pattern']">
         Email inválido
       </ion-text> 
-
-      <ion-item lines="full" color="primary">
-        <ion-label position="floating">Username</ion-label>
-        <ion-input type="text" formControlName="username" required></ion-input>
-      </ion-item>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['username'].errors?.['required']">
-        Username é de preenchimento obrigatório
-      </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['username'].errors?.['pattern']">
-        Username inválido
-      </ion-text> 
       
       <ion-item lines="full" color="primary">
         <ion-label position="floating">Password</ion-label>

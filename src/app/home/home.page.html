@@ -15,14 +15,14 @@
     <form [formGroup]="logForm" (ngSubmit)="submitForm()" novalidate>
 
       <ion-item lines="full" color="primary">
-        <ion-label position="floating">Username</ion-label>
-        <ion-input type="text" formControlName="username"></ion-input>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
       </ion-item>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['username'].errors?.['required']">
-        Username é de preenchimento obrigatório
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['email'].errors?.['required']">
+        Email é de preenchimento obrigatório
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['username'].errors?.['pattern']">
-        Username inválido
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && logForm.controls['email'].errors?.['pattern']">
+        Email inválido
       </ion-text> 
       
       <ion-item lines="full" color="primary">
