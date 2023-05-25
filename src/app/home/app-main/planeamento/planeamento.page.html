@@ -38,12 +38,34 @@
 
   <ion-card id="barranvl1">
     <ion-card-title id="produto">
-      Leite
+      {{ productName }}
     </ion-card-title>
     <ion-card id="quantidade">
       <ion-card-content>
         4 L
       </ion-card-content>
     </ion-card>
+    <ion-card id="putquantidade">
+      <div class="counter-container">
+        <button ion-button icon-only (click)="decrement(productName)" id="botao">
+          <ion-icon name="add"></ion-icon>
+          <ion-icon name="restaurant-sharp"></ion-icon>
+        </button>
+  
+        <input type="number" [(ngModel)]="number" class="counter-input" id="input" />
+  
+        <button ion-button icon-only (click)="increment(productName)" id="botao2">
+          <ion-icon name="add" id="iconCor"></ion-icon>
+          <ion-icon name="cart-sharp"></ion-icon>
+        </button>
+      </div>
+    </ion-card>
   </ion-card>
+  
+  <div class="counter-container">
+    <div class="counter-values">
+      <div>{{ variable1 }}</div>
+      <div>{{ variable2 }}</div>
+    </div>
+  </div>
 </ion-content>

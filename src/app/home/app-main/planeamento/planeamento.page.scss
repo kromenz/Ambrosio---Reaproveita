@@ -85,9 +85,24 @@
     align-items: center;
     justify-content: center;
     width: 160px; /* Ajuste a largura conforme necessário */
-    height: 32px;
+    height: 31.5px;
     position: absolute;
     top: -12px; /* Ajuste a distância do topo conforme necessário */
+    right: -12px; /* Ajuste a distância da esquerda conforme necessário */
+    border-radius: 20px;
+    color: #694d2b;
+  }
+
+  #putquantidade {
+    --background: #c6935a;
+    border: 5px solid #694d2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px; /* Ajuste a largura conforme necessário */
+    height: 31.5px;
+    position: absolute;
+    top: 15px; /* Ajuste a distância do topo conforme necessário */
     right: -12px; /* Ajuste a distância da esquerda conforme necessário */
     border-radius: 20px;
     color: #694d2b;
@@ -102,4 +117,28 @@
     height: 32px;
     border-radius: 20px;
     color: #c6935a;
+  }
+
+  #botao {
+    color:#694d2b;
+
+    background: #c6935a; /* Cor de fundo do botão (substitua #ff0000 pela cor desejada) */
+    width: 35px;
+    height: 32px;
+  }
+
+  #botao2 {
+    color:#694d2b;
+
+    background: #c6935a; /* Cor de fundo do botão (substitua #ff0000 pela cor desejada) */
+    width: 35px;
+    height: 32px;
+  }
+
+  #input{
+    width: 80px;
+    height: 32px;
+    color:#694d2b;
+    background: #FFFFFF;
+
   }

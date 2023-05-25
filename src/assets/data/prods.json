@@ -1,0 +1,76 @@
+[   
+    {
+        "nome": "Queijo",
+        "quantidade": "5 unidades",
+        "data": "14/01/2023",
+        "categoria": "laticinios"
+    },
+    {
+        "nome": "Carne de vaca",
+        "quantidade": "5kg",
+        "data": "11/06/2024",
+        "categoria": "carne"
+    },
+    {
+        "nome": "Camarão",
+        "quantidade": "10kg",
+        "data": "5/03/2019",
+        "categoria": "marisco"
+    },
+    {
+        "nome": "Botelo",
+        "quantidade": "1 unidade",
+        "data": "9/08/2027",
+        "categoria": "enchidos"
+    },
+    {
+        "nome": "Queijo de Cabra",
+        "quantidade": "2 unidades",
+        "data": "19/02/2030",
+        "categoria": "laticinios"
+    },
+    {
+        "nome": "Alheira",
+        "quantidade": "1 unidade",
+        "data": "12/12/2024",
+        "categoria": "enchidos"
+    },
+    {
+        "nome": "Chouriça de verde",
+        "quantidade": "3 unidades",
+        "data": "22/11/2029",
+        "categoria": "enchidos"
+    },
+    {
+        "nome": "Salpicão",
+        "quantidade": "2 unidades",
+        "data": "27/04/2026",
+        "categoria": "enchidos"
+    },
+    {
+        "nome": "Sardinhas",
+        "quantidade": "2kg",
+        "data": "8/08/2023",
+        "categoria": "peixe"
+    },
+    {
+        "nome": "Cherne",
+        "quantidade": "2.2kg",
+        "data": "17/10/2024",
+        "categoria": "peixe"
+    },
+    {
+        "nome": "Choco",
+        "quantidade": "1.7kg",
+        "data": "17/10/2024",
+        "categoria": "molusco"
+    },
+    {
+        "nome": "Lulas",
+        "quantidade": "1.2kg",
+        "data": "15/10/2024",
+        "categoria": "molusco"
+    }
+    
+
+]

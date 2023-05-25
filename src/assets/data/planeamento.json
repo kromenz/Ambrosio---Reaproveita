@@ -1,9 +1,9 @@
 [
     {
         "produto":"Arroz",
-        "QtdPlaneada":4,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":4,
+        "qtdComprada":0,
+        "qtdConsumida":0
     },
     {
         "produto":"Massa",

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface Prods {
-  id: number;
   nome: string;
-  quantidade: number;
+  quantidade: string;
   data: string;
+  categoria: string;
 };
+
+/* car_pes_ovo é carne, pescados e ovos */
 
 @Component({
   selector: 'app-produtos',
@@ -16,7 +18,8 @@ interface Prods {
 export class ProdutosPage implements OnInit {
 
   public dataProds: Prods [] = []
-  private search: string = ""
+  
+  public searchTerm: string = "";
 
   constructor(private router: Router) { }
 
@@ -29,7 +32,7 @@ export class ProdutosPage implements OnInit {
   }
 
   loadProds(){
-    fetch('./assets/data/lista.json')
+    fetch('./assets/data/prods.json')
       .then((response) => response.json())
       .then((json) => {
         if(Array.isArray(json)){
