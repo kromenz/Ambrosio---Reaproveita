@@ -15,5 +15,19 @@
 </ion-header>
 
 <ion-content color="primary">
-  
+  <ion-grid>
+    <ion-row *ngFor="let prods of dataProds" class="ion-margin">
+      <ion-col size="14">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">{{ prods.nome }}</span>
+            <p class="card-text">Quantidade: <span class="secondary-text">{{ prods.quantidade }}</span></p>
+            <p class="card-text">Data de Validade: <span class="secondary-text">{{ prods.data }}</span></p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
