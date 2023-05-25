@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppMainPage } from './app-main.page';
+import { Lista2Component } from './lista2/lista2.component';
 
 const routes: Routes = [
 {
@@ -26,6 +27,7 @@ const routes: Routes = [
       },
     ]
   },
+  { path: 'lista2', component: Lista2Component },
   
 ];
 

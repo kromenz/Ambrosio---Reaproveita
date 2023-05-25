@@ -26,3 +26,80 @@
     transform: scale(5);
     font-weight: bold;
   }
+
+  #barranvl {
+    --background: #36230d;
+      border: 5px solid #694d2b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 320px; /* Ajuste a largura conforme necessário */
+      height: 32px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      border-radius: 20px;
+  }
+
+  #barranvl1 {
+    --background: #36230d;
+      border: 5px solid #694d2b;
+      display: flex;
+      align-items: center;
+      justify-content: flex;
+      position: relative;
+      width: 320px; /* Ajuste a largura conforme necessário */
+      height: 64px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+  }
+
+  #nomenvl {
+    --background: #ffffff;
+      border: 3px solid #694d2b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 240px; /* Ajuste a largura conforme necessário */
+      height: 32px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+  }
+  
+  .custom-rectangle {
+    width: 240px; /* Ajuste a largura conforme necessário */
+    height: 8px; /* Ajuste a altura conforme necessário */
+    background: linear-gradient(to right, green 50%, white 50%);
+  }
+
+  #quantidade {
+    --background: #c6935a;
+    border: 5px solid #694d2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px; /* Ajuste a largura conforme necessário */
+    height: 32px;
+    position: absolute;
+    top: -12px; /* Ajuste a distância do topo conforme necessário */
+    right: -12px; /* Ajuste a distância da esquerda conforme necessário */
+    border-radius: 20px;
+    color: #694d2b;
+  }
+
+  #produto {
+    --background: #c6935a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px; /* Ajuste a largura conforme necessário */
+    height: 32px;
+    border-radius: 20px;
+    color: #c6935a;
+  }

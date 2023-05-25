@@ -49,4 +49,16 @@
   }
 
 
+  #VerLista {
+    --color:#36230d;
+
+    --background: #c6935a; /* Cor de fundo do botão (substitua #ff0000 pela cor desejada) */
+    --border-color: #36230d;
+    --border-style: solid;
+    --border-radius: 10px; /* Raio da borda do botão (substitua 10px pelo valor desejado) */
+    --border-width: 5px; /* Espessura da borda do botão (substitua 2px pelo valor desejado) */
+    position: absolute; /* Posicionamento absoluto do botão */
+    top: 550px; /* Posição vertical do botão (substitua 100px pelo valor desejado) */
+    left: 100px; /* Posição horizontal do botão (substitua 200px pelo valor desejado) */
+  }
   
