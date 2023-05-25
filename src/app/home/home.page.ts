@@ -14,6 +14,7 @@ export class HomePage {
   logForm: FormGroup;
   isSubmitted: boolean;
   logData: any = [];
+  errorMensagem: string = '';
 
   constructor(
     private router: Router, 
@@ -39,10 +40,18 @@ export class HomePage {
       const password = this.logForm.value.password;
       console.log(email + " " + password)
 
-      if(await this.auth.signInWithEmailAndPassword(email, password)){
-        this.router.navigate(['home/app-main/planeamento']);
+      try {
+        if (await this.auth.signInWithEmailAndPassword(email, password)) {
+          this.router.navigate(['home/app-main/planeamento']);
+        } else {
+          this.errorMensagem = 'Credenciais inválidas. Verifique o seu email ou a sua password.';
+          return false;
+        }
+      } catch (error) {
+        this.errorMensagem = 'Utilizador não encontrado. Verifique o seu email ou password.';
+        return false;
       }
-
+      
 
       return true;
     }

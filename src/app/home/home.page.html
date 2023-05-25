@@ -37,6 +37,8 @@
         Password inválida
       </ion-text> 
       
+      <ion-text class="ion-padding" color="danger" *ngIf="errorMensagem">{{ errorMensagem }}</ion-text>
+      
       <ion-row>
         <ion-col>
           <ion-button [disabled]="logForm.invalid" strong="true" type="submit" color="danger" expand="block" color="secondary" class="margem">Entrar</ion-button>
