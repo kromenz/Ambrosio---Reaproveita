@@ -48,9 +48,9 @@ export class CriarContaPage implements OnInit {
       if(await this.auth.createUserWithEmailAndPassword(email, password)){
         this.mensagem = true
       }
-
-      // Redirecionar para a página inicial
-      
+      else{
+        return false
+      }
       return true
     }
   }
