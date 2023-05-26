@@ -27,6 +27,41 @@
     font-weight: bold;
   }
 
+  #Filter {
+    width: 40px;
+    height: 40px;
+  
+    --background: var(--ion-color-background2);
+    --background-hover: var(--ion-color-background2-contrast);
+    --background-activated: var(--ion-color-background2);
+    --background-focused: var(--ion-color-background2);
+  
+    --color: var(--ion-color-castanhochocolate);
+  
+    --border-radius: 50%;
+    --border-color: var(--ion-color-castanhochocolate);
+    --border-style: solid;
+    --border-width: 3px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: var(--ion-color-background2-contrast);
+  
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  
+    position: fixed;
+    top: 40%;
+    right: 2px;
+    transform: translateY(-50%);
+  }
+  
+
+  #filter_icon{
+    transform: scale(5);
+    font-weight: bold;
+  }
+
   .logout-container{
     margin-left: 77%;
   }
@@ -58,4 +93,22 @@
   .secondary-text {
     color: #888;
   }
+
+  .filter-menu {
+    display: none; /* Oculta o menu por padrão */
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 1;
+  }
+  
+  .filter-menu.show {
+    display: block; /* Mostra o menu quando a classe "show" é adicionada */
+  }
+  
+
+  
+  
+  
   

@@ -263,6 +263,36 @@
         "quantidade": "1.3kg",
         "data": "28/12/2024",
         "categoria": "cereais"
+    },
+    {
+        "nome": "Azeite Virgem",
+        "quantidade": "1L",
+        "data": "28/12/2023",
+        "categoria": "azeite"
+    },
+    {
+        "nome": "Óleo",
+        "quantidade": "2L",
+        "data": "28/12/2023",
+        "categoria": "óleo"
+    },
+    {
+        "nome": "Água Monchique",
+        "quantidade": "5L",
+        "data": "28/12/2028",
+        "categoria": "água"
+    },
+    {
+        "nome": "Água Pellegrino",
+        "quantidade": "1L",
+        "data": "28/12/2028",
+        "categoria": "água"
+    },
+    {
+        "nome": "Pedras",
+        "quantidade": "500ml",
+        "data": "28/12/2028",
+        "categoria": "água"
     }
     
 ]
