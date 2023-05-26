@@ -94,6 +94,20 @@
     color: #888;
   }
 
+  .filter-menu {
+    display: none; /* Oculta o menu por padrão */
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 1;
+  }
+  
+  .filter-menu.show {
+    display: block; /* Mostra o menu quando a classe "show" é adicionada */
+  }
+  
+
   
   
   
