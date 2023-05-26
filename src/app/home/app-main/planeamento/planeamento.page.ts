@@ -32,7 +32,7 @@ export class PlaneamentoPage implements OnInit {
   }
 
   loadPlan(){
-    fetch('./assets/data/planeamento.json')
+    fetch('./assets/data/planeamento copy.json')
       .then((response) => response.json())
       .then((json) => {
         if(Array.isArray(json)){
@@ -52,25 +52,96 @@ export class PlaneamentoPage implements OnInit {
   
 
   increment(produto: string, qtdComprada: number, qtdInput: number) {
-    const updatedData = {
-      produto: produto,
-      qtdComprada: qtdComprada + qtdInput
-    };
+  const url = 'http://localhost:3000/planeamento';
   
-    this.http.post('./assets/data/planeamento.json', updatedData)
-      .subscribe((response) => {
-        console.log('Dados atualizados com sucesso:', response);
-      }, (error) => {
-        console.log('Erro ao atualizar os dados:', error);
-      });
-  }
+  this.http.get<any>(url)
+    .subscribe((data) => {
+      const itemEncontrado = data.find((item: any) => item.produto === produto);
+
+      if (itemEncontrado) {
+        const itemId = itemEncontrado.id;
+        const updatedItem = {
+          ...itemEncontrado,
+          qtdComprada: itemEncontrado.qtdComprada + qtdInput,
+        };
+
+        this.http.patch<any>(`${url}/${itemId}`, updatedItem)
+          .subscribe((response) => {
+            console.log('Dados atualizados com sucesso:', response);
+          }, (error) => {
+            console.log('Erro ao atualizar os dados:', error);
+          });
+      } else {
+        console.log('Produto não encontrado');
+      }
+    }, (error) => {
+      console.log('Erro ao obter os dados:', error);
+    });
+}
 
   decrement(produto: string, qtdConsumida: number, qtdInput: number) {
     if (qtdInput > 0) {
-      qtdConsumida += qtdInput
-      console.log(produto)
+      const url = 'http://localhost:3000/planeamento';
+  
+  this.http.get<any>(url)
+    .subscribe((data) => {
+      const itemEncontrado = data.find((item: any) => item.produto === produto);
+
+      if (itemEncontrado) {
+        const itemId = itemEncontrado.id;
+        const updatedItem = {
+          ...itemEncontrado,
+          qtdConsumida: itemEncontrado.qtdConsumida + qtdInput,
+        };
+
+        this.http.patch<any>(`${url}/${itemId}`, updatedItem)
+          .subscribe((response) => {
+            console.log('Dados atualizados com sucesso:', response);
+          }, (error) => {
+            console.log('Erro ao atualizar os dados:', error);
+          });
+      } else {
+        console.log('Produto não encontrado');
+      }
+    }, (error) => {
+      console.log('Erro ao obter os dados:', error);
+    });
     }
   }
+  nivelAmbrosio: number=100;
+
+  calcularNivelAmbrósio() {
+    const url = 'http://localhost:3000/planeamento';
+  
+    this.http.get<any[]>(url).subscribe((data) => {
+      let totalItens = 0;
+      let somaDiferencas = 0;
+  
+      data.forEach((item) => {
+        const diferencaComprada = Math.abs(item.qtdComprada - item.qtdPlaneada);
+        const diferencaConsumida = Math.abs(item.qtdConsumida - item.qtdPlaneada);
+        const diferencaTotal = Math.max(diferencaComprada, diferencaConsumida);
+  
+        somaDiferencas += diferencaTotal;
+        totalItens++;
+      });
+  
+      if (totalItens === 0) {
+        console.log('Nenhum item encontrado.');
+        return;
+      }
+  
+      const mediaDiferencas = somaDiferencas / totalItens;
+      const nivelAmbrósio = 100 - mediaDiferencas;
+      this.nivelAmbrosio=nivelAmbrósio;
+      console.log(this.nivelAmbrosio)
+  
+      console.log('Nível de Ambrósio:', nivelAmbrósio.toFixed(2), '%');
+    }, (error) => {
+      console.log('Erro ao obter os dados:', error);
+    });
+  }
+  
 
   
 
