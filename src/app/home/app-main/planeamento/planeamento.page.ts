@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 interface Plan {
   produto: string;
   qtdPlaneada: number;
   qtdConsumida: number;
   qtdComprada: number;
+  qtdInput: number;
 };
 
 @Component({
@@ -17,7 +19,9 @@ export class PlaneamentoPage implements OnInit {
 
   public dataPlan: Plan [] = []
 
-  constructor(private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+  
+  }
 
   ngOnInit() {
     this.loadPlan();
@@ -45,14 +49,26 @@ export class PlaneamentoPage implements OnInit {
   number: number = 0;
   variable1: number = 0;
   variable2: number = 0;
+  
 
-  increment() {
-    this.variable1 += this.number;
+  increment(produto: string, qtdComprada: number, qtdInput: number) {
+    const updatedData = {
+      produto: produto,
+      qtdComprada: qtdComprada + qtdInput
+    };
+  
+    this.http.post('./assets/data/planeamento.json', updatedData)
+      .subscribe((response) => {
+        console.log('Dados atualizados com sucesso:', response);
+      }, (error) => {
+        console.log('Erro ao atualizar os dados:', error);
+      });
   }
 
-  decrement() {
-    if (this.number > 0) {
-      this.variable2 += this.number;
+  decrement(produto: string, qtdConsumida: number, qtdInput: number) {
+    if (qtdInput > 0) {
+      qtdConsumida += qtdInput
+      console.log(produto)
     }
   }
 

@@ -25,42 +25,38 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="barranvl1">
-    <ion-card-title id="produto">
-      Arroz
-    </ion-card-title>
-    <ion-card id="quantidade">
-      <ion-card-content>
-        3 Kg
-      </ion-card-content>
-    </ion-card>
-  </ion-card>
-
-  <ion-card id="barranvl1">
-    <ion-card-title id="produto">
-      {{ productName }}
-    </ion-card-title>
-    <ion-card id="quantidade">
-      <ion-card-content>
-        4 L
-      </ion-card-content>
-    </ion-card>
-    <ion-card id="putquantidade">
-      <div class="counter-container">
-        <button ion-button icon-only (click)="decrement(productName)" id="botao">
-          <ion-icon name="add"></ion-icon>
-          <ion-icon name="restaurant-sharp"></ion-icon>
-        </button>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let prod of dataPlan">
+        <ion-card id="barranvl1">
+          <ion-card-title id="produto">
+            {{ prod.produto }}
+          </ion-card-title>
+          <ion-card id="quantidade">
+            <ion-card-content>
+              {{ prod.qtdPlaneada }} L
+            </ion-card-content>
+          </ion-card>
+          <ion-card id="putquantidade">
+            <div class="counter-container">
+              <button ion-button icon-only (click)="decrement(prod.produto,prod.qtdConsumida,prod.qtdInput)" id="botao">
+                <ion-icon name="add"></ion-icon>
+                <ion-icon name="restaurant-sharp"></ion-icon>
+              </button>
   
-        <input type="number" [(ngModel)]="number" class="counter-input" id="input" />
+              <input type="number" [(ngModel)]="prod.qtdInput" class="counter-input" id="input" />
   
-        <button ion-button icon-only (click)="increment(productName)" id="botao2">
-          <ion-icon name="add" id="iconCor"></ion-icon>
-          <ion-icon name="cart-sharp"></ion-icon>
-        </button>
-      </div>
-    </ion-card>
-  </ion-card>
+              <button ion-button icon-only (click)="increment(prod.produto,prod.qtdComprada,prod.qtdInput)" id="botao2">
+                <ion-icon name="add" id="iconCor"></ion-icon>
+                <ion-icon name="cart-sharp"></ion-icon>
+              </button>
+            </div>
+          </ion-card>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
   
   <div class="counter-container">
     <div class="counter-values">

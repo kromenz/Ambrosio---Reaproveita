@@ -29,10 +29,12 @@
     "@ionic/storage-angular": "^3.0.6",
     "@supabase/supabase-js": "^2.22.0",
     "cordova-sqlite-storage": "^6.1.0",
+    "custom-ionic-search-bar": "^1.0.3",
     "firebase": "^9.22.0",
     "ionicons": "^7.0.0",
     "localforage-cordovasqlitedriver": "^1.8.0",
     "ng2-search-filter": "^0.5.1",
+    "react-search-box": "^3.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

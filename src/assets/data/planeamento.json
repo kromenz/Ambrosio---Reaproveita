@@ -3,54 +3,63 @@
         "produto":"Arroz",
         "qtdPlaneada":4,
         "qtdComprada":0,
-        "qtdConsumida":0
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Massa",
-        "QtdPlaneada":2,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":2,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Leite",
-        "QtdPlaneada":7,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":7,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Pão",
-        "QtdPlaneada":1.5,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":1.5,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Cereais",
-        "QtdPlaneada":0.9,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":0.9,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Frango",
-        "QtdPlaneada":1.7,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":1.7,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Ervilhas",
-        "QtdPlaneada":0.6,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":0.6,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Cenoura",
-        "QtdPlaneada":1.3,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":1.3,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     },
     {
         "produto":"Azeite",
-        "QtdPlaneada":1,
-        "QtdComprada":0,
-        "QtdConsumida":0
+        "qtdPlaneada":1,
+        "qtdComprada":0,
+        "qtdConsumida":0,
+        "qtdInput":0
     }
 ]
