@@ -70,7 +70,199 @@
         "quantidade": "1.2kg",
         "data": "15/10/2024",
         "categoria": "molusco"
+    },
+    {
+        "nome": "Salmão",
+        "quantidade": "500g",
+        "data": "20/09/2023",
+        "categoria": "peixe"
+    },
+        
+    {
+        "nome": "Carne de Porco",
+        "quantidade": "800g",
+        "data": "05/12/2024",
+        "categoria": "carne"
+    },
+        
+    {
+        "nome": "Frango",
+        "quantidade": "1.5kg",
+        "data": "25/08/2024",
+        "categoria": "carne"
+    },
+        
+    {
+        "nome": "Atum",
+        "quantidade": "300g",
+        "data": "10/07/2023",
+        "categoria": "peixe"
+    },
+
+    {
+        "nome": "Bacalhau",
+        "quantidade": "700g",
+        "data": "05/09/2023",
+        "categoria": "peixe"
+    },
+        
+    {
+        "nome": "Picanha",
+        "quantidade": "1kg",
+        "data": "28/12/2024",
+        "categoria": "carne"
+    },
+        
+        
+    {
+        "nome": "Polvo",
+        "quantidade": "900g",
+        "data": "30/10/2024",
+        "categoria": "molusco"
+    },
+
+    {
+        "nome": "Mexilhões",
+        "quantidade": "400g",
+        "data": "28/11/2023",
+        "categoria": "marisco"
+    },
+
+    {
+        "nome": "Ameijoâs",
+        "quantidade": "400g",
+        "data": "28/10/2023",
+        "categoria": "marisco"
+    }, 
+    {
+        "nome": "Peixe-espada",
+        "quantidade": "900g",
+        "data": "12/09/2024",
+        "categoria": "peixe"
+    },
+        
+    {
+        "nome": "Vieiras",
+        "quantidade": "200g",
+        "data": "05/11/2023",
+        "categoria": "marisco"
+    },
+    {
+        "nome": "Lagosta",
+        "quantidade": "700g",
+        "data": "30/12/2024",
+        "categoria": "marisco"
+    },
+    {
+        "nome": "Arroz Integral",
+        "quantidade": "1kg",
+        "data": "15/10/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Aveia em Flocos",
+        "quantidade": "500g",
+        "data": "20/09/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Trigo Sarraceno",
+        "quantidade": "800g",
+        "data": "05/12/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Milho em Grão",
+        "quantidade": "600g",
+        "data": "30/11/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Cevada",
+        "quantidade": "1.5kg",
+        "data": "25/08/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Arroz Basmati",
+        "quantidade": "500g",
+        "data": "10/07/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Couscous",
+        "quantidade": "400g",
+        "data": "15/10/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Quinoa",
+        "quantidade": "700g",
+        "data": "05/09/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Arroz Selvagem",
+        "quantidade": "1kg",
+        "data": "28/12/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Flocos de Milho",
+        "quantidade": "400g",
+        "data": "15/11/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Arroz Carnaroli",
+        "quantidade": "900g",
+        "data": "30/10/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Trigo em Grão",
+        "quantidade": "600g",
+        "data": "20/09/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Arroz Basmati Integral",
+        "quantidade": "1kg",
+        "data": "12/11/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Arroz Jasmine",
+        "quantidade": "500g",
+        "data": "15/10/2024",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Arroz Vermelho",
+        "quantidade": "700g",
+        "data": "10/09/2023",
+        "categoria": "cereais"
+    },
+        
+    {
+        "nome": "Espelta",
+        "quantidade": "1.3kg",
+        "data": "28/12/2024",
+        "categoria": "cereais"
     }
     
-
 ]

@@ -8,6 +8,7 @@ import { ListaPageRoutingModule } from './lista-routing.module';
 
 import { ListaPage } from './lista.page';
 
+
 @NgModule({
   imports: [
     CommonModule,

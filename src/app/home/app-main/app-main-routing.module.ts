@@ -25,9 +25,12 @@ const routes: Routes = [
         redirectTo: '/planeamento',
         pathMatch: 'full',
       },
+      { 
+        path: 'lista2',
+        component: Lista2Component 
+      }    
     ]
   },
-  { path: 'lista2', component: Lista2Component },
   
 ];
 
