@@ -29,7 +29,7 @@
               <ion-list>
                 <ng-container *ngFor="let produto of prod.produtos">
                   <ion-item color="tertiary" class="custom-checkbox">  
-                    <ion-checkbox>{{produto}}</ion-checkbox>
+                    <ion-checkbox [checked]="selectedProducts.includes(produto)" (ionChange)="selecionarProduto(produto)">{{produto}}</ion-checkbox>
                   </ion-item>
                 </ng-container>
               </ion-list>
@@ -41,6 +41,6 @@
     </ion-row>
   </ion-grid>
   
-  <ion-button [routerLink]="('../lista-compras')" id="VerLista" size="large" strong="true">Ver Lista</ion-button>
+  <ion-button [routerLink]="('../lista-compras')" id="VerLista" size="large" strong="true" (click)="salvarSelecionados()">Ver Lista</ion-button>
   
 </ion-content>

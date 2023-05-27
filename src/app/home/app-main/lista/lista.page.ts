@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonAccordionGroup } from '@ionic/angular';
-import { ListaService, ListaProds } from 'src/app/services/lista/lista.service';
+import { Storage } from '@ionic/storage-angular';
 
 interface List {
   produtos: string[];
@@ -9,25 +9,35 @@ interface List {
   imagem: string;
 }
 
+
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.page.html',
   styleUrls: ['./lista.page.scss'],
 })
 export class ListaPage implements OnInit {
+  listaProdutos: any[] = [];
+  selectedProdutos: any[] = [];
+  selectedProducts: string[] = [];
 
   public dataList: List[] = [];
 
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup | undefined;
 
-  constructor(private router: Router, private listaSV: ListaService) { }
+  constructor(private router: Router, private storage: Storage) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.initializeStorage();
     this.loadList();
   }
 
   onClick(x: any) {
     this.router.navigateByUrl(x);
+  }
+
+  async initializeStorage() {
+    await this.storage.create();
+    this.carregarSelecionados();
   }
 
   loadList() {
@@ -46,20 +56,26 @@ export class ListaPage implements OnInit {
       });
   }
 
-  removerProduto(produto: string) {
-    const listaProduto: ListaProds = { produtos: produto, categoria: '' };
-    this.listaSV.removerProduto(listaProduto)
-      .then(() => console.log('Produto removido da lista:', produto))
-      .catch(error => console.error('Erro ao remover produto da lista:', error));
+  salvarSelecionados() {
+    this.storage.set('produtosSelecionados', this.selectedProducts);
+  }
+  
+  carregarSelecionados() {
+    this.storage.get('produtosSelecionados').then((produtos) => {
+      if (produtos) {
+        this.selectedProducts = produtos;
+      }
+    });
   }
 
-  adicionarProduto(produtos: string, categoria: string) {
-    this.listaSV.adicionarProduto(produtos, categoria)
-      .then(() => {
-        console.log('Produto adicionado à lista:', produtos);
-      })
-      .catch((error) => {
-        console.error('Erro ao adicionar produto à lista:', error);
-      });
+  selecionarProduto(produto: string) {
+    if (this.selectedProducts.includes(produto)) {
+      this.selectedProducts = this.selectedProducts.filter((p) => p !== produto);
+      console.log("Produto removido: " + produto);
+    } else {
+      this.selectedProducts.push(produto);
+      console.log("Produto adicionado: " + produto);
+    }
   }
+
 }
