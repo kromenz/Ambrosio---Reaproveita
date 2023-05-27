@@ -28,10 +28,10 @@
             <div class="ion-padding" class="ion-padding custom-color" slot="content">
               <ion-list>
                 <ng-container *ngFor="let produto of prod.produtos">
-          <ion-item color="tertiary" class="custom-checkbox">  
-            <ion-checkbox>{{produto}}</ion-checkbox>
-          </ion-item>
-        </ng-container>
+                  <ion-item color="tertiary" class="custom-checkbox">  
+                    <ion-checkbox>{{produto}}</ion-checkbox>
+                  </ion-item>
+                </ng-container>
               </ion-list>
             </div>
           </ion-accordion>
@@ -41,7 +41,6 @@
     </ion-row>
   </ion-grid>
   
-
   <ion-button [routerLink]="('../lista-compras')" id="VerLista" size="large" strong="true">Ver Lista</ion-button>
   
 </ion-content>

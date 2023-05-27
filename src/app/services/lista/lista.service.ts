@@ -25,7 +25,7 @@ export class ListaService {
     this.listaProds = storedList ? JSON.parse(storedList) : [];
   }
 
-  adicionarVerMaisTarde(produtos: string, categoria: string): Promise<void> {
+  adicionarProduto(produtos: string, categoria: string): Promise<void> {
     return new Promise<void>((resolve) => {
       const prodExistente = this.listaProds.find(prod => prod.produtos === produtos && prod.categoria === categoria);
       if (prodExistente) {
@@ -52,7 +52,7 @@ export class ListaService {
     }
   }
 
-  async removerProdLista(prod: ListaProds) {
+  async removerProduto(prod: ListaProds) {
     if (!this.storageInstance) {
       await this.initStorage();
     }
@@ -63,4 +63,5 @@ export class ListaService {
       console.log('Produto removido do Ionic Storage:', prod);
     }
   }
+  
 }
