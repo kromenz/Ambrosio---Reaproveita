@@ -1,0 +1,48 @@
+[
+    { 
+        "produtos":["Maçã", "Banana", "Laranja", "Morango", "Abacaxi","Manga"],
+        "categoria":"Fruta",
+        "imagem":"assets/fruta.png"
+    },
+    {
+        "produtos": ["Cenoura", "Alface", "Brócolis", "Couve-flor", "Tomate"],
+        "categoria":"Legumes",
+        "imagem":"assets/legumes.png"
+    },
+    {
+        "produtos": ["Leite", "Queijo", "Iogurte", "Manteiga", "Coalhada"],
+        "categoria":"Laticínios",
+        "imagem":"assets/laticinios.png"
+    },
+    {   
+        "produtos":["Pão", "Batatas", "Arroz", "Aveia", "Mandioca"],
+        "categoria":"Cereais, Tubérculos, Etc.",
+        "imagem":"assets/cereais.png"
+    },
+    {
+        "produtos":["Salmão", "Leitão", "Frango", "Carne bovina", "Ovos"],
+        "categoria":"Carnes, Pescados e Ovos",
+        "imagem":"assets/carnes.png"
+    },
+    {
+        "produtos": ["Feijão", "Ervilha", "Lentilha", "Grão-de-bico", "Soja"],
+        "categoria":"Leguminosas",
+        "imagem":"assets/leguminosas.png"
+    },
+    {
+        "produtos": ["Azeite", "Óleo de Girassol", "Óleo de Coco", "Óleo de Abacate", "Óleo de Amêndoas"],
+        "categoria":"Óleos",
+        "imagem":"assets/oleos.png"
+    },
+    {
+        "produtos":["Sumo de Maçã", "Vinho", "Chá Verde", "Água de Coco", "Café"],
+        "categoria":"Bebidas",
+        "imagem":"assets/bebidas.png"
+    },
+    {
+        "produtos":["Chocolate", "Abacate", "Quinoa", "Chia", "Castanhas"],
+        "categoria":"Outros",
+        "imagem":"assets/outros.png"
+    }
+]
+  

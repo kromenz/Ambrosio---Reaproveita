@@ -57,8 +57,34 @@
     --border-style: solid;
     --border-radius: 10px; /* Raio da borda do botão (substitua 10px pelo valor desejado) */
     --border-width: 5px; /* Espessura da borda do botão (substitua 2px pelo valor desejado) */
-    position: absolute; /* Posicionamento absoluto do botão */
-    top: 525px; /* Posição vertical do botão (substitua 100px pelo valor desejado) */
-    left: 100px; /* Posição horizontal do botão (substitua 200px pelo valor desejado) */
+    position: fixed; /* Posicionamento absoluto do botão */
+    top: 575px; /* Posição vertical do botão (substitua 100px pelo valor desejado) */
+    left: 115px; /* Posição horizontal do botão (substitua 200px pelo valor desejado) */
+  }
+
+
+  .accordion-header {
+    background-size: cover; /* Ajusta o tamanho do plano de fundo para cobrir o espaço disponível */
+    background-position: center; /* Centraliza a imagem no plano de fundo */
+    background-repeat: no-repeat; /* Impede a repetição da imagem no plano de fundo */
+    border-radius: 10px; /* Define o raio do canto do elemento ion-item */
+    height: 120px; /* Define a altura desejada para o accordion */
+    
+    
   }
   
+  #card{
+    background: #e7d9c7;
+    border: 5px solid #694d2b;
+    border-radius: 20px;
+  }
+  
+  .accordion-image {
+    width: 60%; /* Define a largura desejada para a imagem */
+    height: 60%; /* A altura será ajustada proporcionalmente */
+    border-radius: 10px; /* Define o raio do canto da imagem */
+  }
+  
+  ion-content{
+    --background: #e7d9c7;
+  }

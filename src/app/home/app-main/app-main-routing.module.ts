@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppMainPage } from './app-main.page';
-import { Lista2Component } from './lista2/lista2.component';
 
 const routes: Routes = [
-{
+  {
     path: '',
     component: AppMainPage,
     children: [
@@ -24,15 +23,15 @@ const routes: Routes = [
         path: 'app-main',
         redirectTo: '/planeamento',
         pathMatch: 'full',
-      },
-      { 
-        path: 'lista2',
-        component: Lista2Component 
-      }    
-    ]
-  },
-  
+      }
+    ],
+  },  {
+    path: 'lista-compras',
+    loadChildren: () => import('./lista-compras/lista-compras.module').then( m => m.ListaComprasPageModule)
+  }
+
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

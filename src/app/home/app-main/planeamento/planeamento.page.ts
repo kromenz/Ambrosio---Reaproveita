@@ -8,6 +8,7 @@ interface Plan {
   qtdConsumida: number;
   qtdComprada: number;
   qtdInput: number;
+  UnMedida: number;
 };
 
 @Component({

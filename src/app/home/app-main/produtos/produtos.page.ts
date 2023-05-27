@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface Prods {
@@ -15,8 +15,10 @@ interface Prods {
   templateUrl: './produtos.page.html',
   styleUrls: ['./produtos.page.scss'],
 })
-export class ProdutosPage implements OnInit {
 
+export class ProdutosPage implements OnInit{
+  @ViewChild('popover')
+  popover!: { event: Event; };
   public dataProds: Prods [] = []
   
   public searchTerm: string = "";
@@ -25,6 +27,12 @@ export class ProdutosPage implements OnInit {
 
   ngOnInit() {
     this.loadProds()
+  }
+  isOpen = false;
+
+  presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
   }
 
   onClick(x: any){

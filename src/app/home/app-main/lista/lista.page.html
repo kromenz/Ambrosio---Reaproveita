@@ -15,88 +15,33 @@
 </ion-header>
 
 <ion-content color="primary">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card id="card">
+        <ion-accordion-group id="acordgroup" expand="inset" multiple="true">
+          <ion-accordion *ngFor="let prod of dataList">
+            <ion-item slot="header" color="secondary" class="accordion-header" style="background-image: url({{prod.imagem}});">
+              <ion-label class="ion-text-center">{{prod.categoria}}
+              </ion-label>
+            </ion-item>
+            <div class="ion-padding" class="ion-padding custom-color" slot="content">
+              <ion-list>
+                <ng-container *ngFor="let produto of prod.produtos">
+          <ion-item color="tertiary" class="custom-checkbox">  
+            <ion-checkbox>{{produto}}</ion-checkbox>
+          </ion-item>
+        </ng-container>
+              </ion-list>
+            </div>
+          </ion-accordion>
+      </ion-accordion-group>
+    </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 
-  <ion-accordion-group expand="inset" multiple="true" >
-
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light" color="secondary">
-        <ion-label>Legumes e Verduras</ion-label>
-      </ion-item>
-      <div class="ion-padding custom-color" slot="content">
-        <ion-list>
-          <ion-item color="tertiary">
-            <ion-checkbox>Cenoura</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary"> 
-            <ion-checkbox>Alface</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Cebola</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Brócolos</ion-checkbox>
-          </ion-item>
-        </ion-list>
-      </div>
-    </ion-accordion>
-
-    <ion-accordion value="second">
-      <ion-item slot="header" color="secondary">
-        <ion-label>Frutas</ion-label>
-      </ion-item>
-      <div slot="content" class="ion-padding custom-color">
-        <ion-list>
-          <ion-item color="tertiary">
-            <ion-checkbox>Maçã</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Banana</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Laranja</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Manga</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Morango</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Pêra</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Melancia</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Uvas</ion-checkbox>
-          </ion-item>
-        </ion-list> 
-      </div>
-
-    </ion-accordion>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="secondary">
-        <ion-label>Laticínios</ion-label>
-      </ion-item>
-      <div class="ion-padding" class="ion-padding custom-color" slot="content">
-        <ion-list>
-          <ion-item color="tertiary">  
-            <ion-checkbox>Leite</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Queijo</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Iogurte</ion-checkbox>
-          </ion-item>
-          <ion-item color="tertiary">
-            <ion-checkbox>Iogurte Líquido</ion-checkbox>
-          </ion-item>
-        </ion-list>
-      </div>
-    </ion-accordion>
-  </ion-accordion-group>
-
-  <ion-button [routerLink]="('../lista2')" id="VerLista" size="large" strong="true">Ver Lista</ion-button>
+  <ion-button [routerLink]="('../lista-compras')" id="VerLista" size="large" strong="true">Ver Lista</ion-button>
   
 </ion-content>

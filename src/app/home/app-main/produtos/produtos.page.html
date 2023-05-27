@@ -12,11 +12,14 @@
       </ion-title>
     </ion-row>
     
-    <div>
-      <ion-button id="Filter">
-        <ion-icon slot="icon-only" id="filter_icon" name="filter-outline"></ion-icon>
-      </ion-button>
-    </div>
+    <ion-button id="Filter" (click)="presentPopover($event)">
+      <ion-icon slot="icon-only" id="filter_icon" name="filter-outline"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" color="primary">
+      <ng-template>
+        <ion-content class="ion-padding">Hello World!</ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 

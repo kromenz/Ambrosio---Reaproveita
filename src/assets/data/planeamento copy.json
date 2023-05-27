@@ -5,62 +5,71 @@
                 "qtdPlaneada":4,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Massa",
                 "qtdPlaneada":2,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Leite",
                 "qtdPlaneada":7,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"L"
             },
             {
                 "produto":"Pão",
                 "qtdPlaneada":1.5,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Cereais",
                 "qtdPlaneada":0.9,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Frango",
                 "qtdPlaneada":1.7,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Ervilhas",
                 "qtdPlaneada":0.6,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Cenoura",
                 "qtdPlaneada":1.3,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"Kg"
             },
             {
                 "produto":"Azeite",
                 "qtdPlaneada":1,
                 "qtdComprada":0,
                 "qtdConsumida":0,
-                "qtdInput":0
+                "qtdInput":0,
+                "UnMedida":"L"
             }
         ]
