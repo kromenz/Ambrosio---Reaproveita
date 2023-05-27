@@ -45,9 +45,5 @@ export class ListaPage implements OnInit {
         console.log('error loading list data |', error);
       });
   }
-
-  createList(){
-  }
-
   
 }
