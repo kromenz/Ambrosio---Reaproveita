@@ -31,6 +31,10 @@ export class ListaPage implements OnInit {
     this.loadList();
   }
 
+  ionViewWillEnter() {
+    this.atualizarProdutosSelecionados();
+  }
+  
   onClick(x: any) {
     this.router.navigateByUrl(x);
   }
@@ -89,5 +93,20 @@ export class ListaPage implements OnInit {
     }
   }
   
-
+  atualizarProdutosSelecionados() {
+    this.storage.get('produtosSelecionados').then((produtos) => {
+      if (produtos) {
+        this.selectedProducts = produtos;
+  
+        // Atualizar a lista de produtos selecionados na página lista-compras
+        if (this.router.url.includes('lista-compras')) {
+          this.selectedProdutos = this.selectedProducts.map(p => ({
+            nome: p,
+            visivel: true
+          }));
+        }
+      }
+    });
+  }
+  
 }

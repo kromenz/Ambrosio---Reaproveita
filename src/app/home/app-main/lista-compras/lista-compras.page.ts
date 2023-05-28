@@ -13,8 +13,10 @@ interface Produto {
   styleUrls: ['lista-compras.page.scss']
 })
 export class ListaComprasPage {
+  voltandoAtras: boolean = false;
 
   produtosSelecionados: Produto[] = [];
+  produtosListaOriginal: Produto[] = []; // Nova propriedade para armazenar a lista original de produtos selecionados
 
   novoProduto: string = '';
 
@@ -32,9 +34,16 @@ export class ListaComprasPage {
 
   ionViewWillEnter() {
     this.carregarSelecionados();
+  
+    // Verificar se há produtos em produtosListaCompras que não estão em produtosSelecionados
+    this.produtosListaCompras.forEach(produto => {
+      const existe = this.produtosSelecionados.some(p => p.nome === produto.nome);
+      if (!existe) {
+        produto.visivel = false;
+      }
+    });
   }
   
-
   onClick(x: any) {
     this.router.navigateByUrl(x);
   }
@@ -43,11 +52,18 @@ export class ListaComprasPage {
     this.storage.get('produtosSelecionados').then((produtos: Produto[]) => {
       if (produtos) {
         this.produtosSelecionados = produtos;
-        this.produtosListaCompras = this.produtosSelecionados.filter(produto => produto.visivel);
+  
+        // Verificar se algum produto da produtosListaOriginal não está presente em produtosSelecionados e removê-los
+        this.produtosListaOriginal = this.produtosListaOriginal.filter(p =>
+          this.produtosSelecionados.some(s => s.nome === p.nome)
+        );
+  
+        this.atualizarProdutosListaCompras();
       }
     });
   }
   
+
   adicionarProduto() {
     if (this.novoProduto) {
       const novoProduto: Produto = { nome: this.novoProduto, visivel: true };
@@ -59,12 +75,23 @@ export class ListaComprasPage {
 
   salvarSelecionados() {
     this.storage.set('produtosSelecionados', this.produtosSelecionados);
-    this.produtosListaCompras = this.produtosSelecionados.filter(produto => produto.visivel);
+    this.atualizarProdutosListaCompras();
   }
 
   removerProduto(produto: Produto) {
     this.produtosSelecionados = this.produtosSelecionados.filter(p => p !== produto);
+    this.produtosListaCompras = this.produtosListaCompras.filter(p => p !== produto); // Atualize a lista produtosListaCompras
     this.salvarSelecionados();
   }
   
+  private atualizarProdutosListaCompras() {
+    this.produtosListaCompras = this.produtosSelecionados.filter(produto => produto.visivel);
+  }
+
+  restaurarEstadoOriginal() {
+    this.produtosSelecionados = [...this.produtosListaOriginal]; // Restaure a lista de produtos selecionados com a lista original
+    this.produtosListaCompras = this.produtosSelecionados.filter(produto => produto.visivel); // Atualize a lista produtosListaCompras
+    this.salvarSelecionados();
+  }
+
 }

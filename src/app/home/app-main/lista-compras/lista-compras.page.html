@@ -12,7 +12,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" color="primary">
+<ion-content [fullscreen]="true" color="primary" (ionViewWillLeave)="restaurarEstadoOriginal()">
   <ion-card id="card" *ngFor="let produto of produtosSelecionados">
     <ion-item-sliding  color="primary">
       <ion-item color="tertiary">
