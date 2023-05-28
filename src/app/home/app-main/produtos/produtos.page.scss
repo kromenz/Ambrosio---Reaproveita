@@ -132,6 +132,15 @@
   ion-popover::part(backdrop) {
     background-color: var(--ion-color-tertiary);;
   }
+
+  .menu-button {
+    width: 200px; /* Defina o tamanho desejado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Adicione um espaçamento vertical entre os botões */
+  }
+  
   
 
   

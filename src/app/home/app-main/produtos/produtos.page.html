@@ -17,7 +17,25 @@
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" color="primary">
       <ng-template>
-        <ion-content class="ion-padding">Hello World!</ion-content>
+        <ion-content class="ion-padding">
+          <h3 class="popover-title">Filtros:</h3>
+
+          <ion-button (click)="sortByDate()" class="menu-button" color="primary">
+            <ion-icon slot="start" name="calendar"></ion-icon>
+            Data
+          </ion-button>
+          
+          <ion-button (click)="sortAlphabetically()" class="menu-button" color="primary">
+              <ion-icon slot="start" name="text"></ion-icon>
+              Ordem Alfabética
+          </ion-button>
+          
+          <ion-button (click)="sortByQuantity()" class="menu-button" color="primary">
+            <ion-icon slot="start" name="analytics"></ion-icon>
+            Quantidade
+          </ion-button>
+
+        </ion-content>
       </ng-template>
     </ion-popover>
   </ion-toolbar>
