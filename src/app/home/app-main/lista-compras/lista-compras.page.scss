@@ -1,0 +1,17 @@
+#card{
+    --background: #36230d;
+      border: 1px solid #694d2b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      width: 350px;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 0;
+    margin-left: 280px;
+  }

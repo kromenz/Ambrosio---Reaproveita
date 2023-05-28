@@ -1,26 +1,26 @@
 [
     { 
-        "produtos":["Maçã", "Banana", "Laranja", "Morango", "Abacaxi","Manga"],
+        "produtos":["Maçã", "Banana", "Laranja", "Morango", "Abacaxi","Manga","Pêra","Uvas","Melancia", "Castanha","Penalti"],
         "categoria":"Fruta",
         "imagem":"assets/fruta.png"
     },
     {
-        "produtos": ["Cenoura", "Alface", "Brócolis", "Couve-flor", "Tomate"],
+        "produtos": ["Cenoura", "Alface", "Brócolos", "Couve-flor", "Tomate","Cebola","Pepino","Couve"],
         "categoria":"Legumes",
         "imagem":"assets/legumes.png"
     },
     {
-        "produtos": ["Leite", "Queijo", "Iogurte", "Manteiga", "Coalhada"],
+        "produtos": ["Leite", "Queijo", "Iogurte", "Manteiga", "Natas", "Iogurte Líquido"],
         "categoria":"Laticínios",
         "imagem":"assets/laticinios.png"
     },
     {   
-        "produtos":["Pão", "Batatas", "Arroz", "Aveia", "Mandioca"],
+        "produtos":["Pão","Massa", "Batatas", "Arroz","Cereais", "Milho", "Aveia", "Mandioca"],
         "categoria":"Cereais, Tubérculos, Etc.",
         "imagem":"assets/cereais.png"
     },
     {
-        "produtos":["Salmão", "Leitão", "Frango", "Carne bovina", "Ovos"],
+        "produtos":[ "Carne bovina", "Carne Suína", "Frango", "Ovos", "Atum", "Salmão", "Bacalhau",  "Peru"],
         "categoria":"Carnes, Pescados e Ovos",
         "imagem":"assets/carnes.png"
     },
@@ -30,17 +30,17 @@
         "imagem":"assets/leguminosas.png"
     },
     {
-        "produtos": ["Azeite", "Óleo de Girassol", "Óleo de Coco", "Óleo de Abacate", "Óleo de Amêndoas"],
+        "produtos": ["Azeite","Vinagre", "Óleo de Girassol", "Óleo de Coco", "Óleo de Abacate", "Óleo de Amêndoas"],
         "categoria":"Óleos",
         "imagem":"assets/oleos.png"
     },
     {
-        "produtos":["Sumo de Maçã", "Vinho", "Chá Verde", "Água de Coco", "Café"],
+        "produtos":["Água","Ice Tea", "Café", "Coca-Cola","Chá", "Sumo Nectar", "Bebidas Gaseificadas", "Vinho",  "Água de Coco"],
         "categoria":"Bebidas",
         "imagem":"assets/bebidas.png"
     },
     {
-        "produtos":["Chocolate", "Abacate", "Quinoa", "Chia", "Castanhas"],
+        "produtos":["Sal", "Açúcar", "Bolachas", "Chocolate", "Gelado", "Maionese", "Ketchup", "Mel", "Pimenta", "Canela"],
         "categoria":"Outros",
         "imagem":"assets/outros.png"
     }

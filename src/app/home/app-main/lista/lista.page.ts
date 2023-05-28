@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { IonAccordionGroup } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
-interface List {
+export interface List {
   produtos: string[];
   categoria: string;
   imagem: string;
@@ -77,5 +77,17 @@ export class ListaPage implements OnInit {
       console.log("Produto adicionado: " + produto);
     }
   }
+
+  adicionarNaListaCompras(produto: string) {
+    // Verifica se o produto já está na lista de produtos selecionados
+    const produtoExistente = this.selectedProdutos.find(p => p.nome === produto);
+  
+    if (!produtoExistente) {
+      // Adiciona o produto à lista de produtos selecionados
+      this.selectedProdutos.push({ nome: produto, visivel: true });
+      this.salvarSelecionados();
+    }
+  }
+  
 
 }

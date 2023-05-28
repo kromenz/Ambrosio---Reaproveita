@@ -13,15 +13,27 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="primary">
-
-  <ion-card>
-    <ion-item-sliding *ngFor="let produto of produtosSelecionados" color="primary">
+  <ion-card id="card" *ngFor="let produto of produtosSelecionados">
+    <ion-item-sliding  color="primary">
       <ion-item color="tertiary">
         <ion-label>{{ produto }}</ion-label>
       </ion-item>
-  
       <ion-item-options side="end">
-        <ion-item-option color="danger">
+        <ion-item-option color="danger" (click)="removerProduto(produto)">
+          <ion-icon slot="start" name="trash"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+
+  <ion-card id="card" *ngFor="let produto of produtosListaCompras">
+    <ion-item-sliding  color="primary">
+      <ion-item color="tertiary">
+        <ion-label>{{ produto.nome }}</ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="removerProduto(produto)">
           <ion-icon slot="start" name="trash"></ion-icon>
           Delete
         </ion-item-option>
@@ -29,4 +41,14 @@
     </ion-item-sliding>
   </ion-card>
   
-</ion-content>
+  
+  <ion-footer>
+    <ion-toolbar id="card">
+      <ion-item  color="secondary">
+        <ion-input placeholder="Novo produto" [(ngModel)]="novoProduto"></ion-input>
+        <ion-button color="primary" slot="end" (click)="adicionarProduto()">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>

@@ -1,0 +1,126 @@
+import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+import { Router } from '@angular/router';
+
+interface Produto {
+  nome: string;
+  visivel: boolean;
+}
+
+@Component({
+  selector: 'app-lista-compras',
+  templateUrl: 'lista-compras.page.html',
+  styleUrls: ['lista-compras.page.scss']
+})
+export class ListaComprasPage {
+
+  produtosSelecionados: Produto[] = [];
+
+  novoProduto: string = '';
+
+  produtosListaCompras: Produto[] = [];
+
+
+  constructor(private storage: Storage, private router: Router) {
+    this.initializeStorage(); // Chame o método initializeStorage() no construtor
+  }
+
+  async initializeStorage() {
+    await this.storage.create(); // Chame o método create() para criar o banco de dados
+    this.carregarSelecionados();
+  }
+
+  ionViewWillEnter() {
+    this.carregarSelecionados();
+  }
+  
+
+  onClick(x: any) {
+    this.router.navigateByUrl(x);
+  }
+
+  carregarSelecionados() {
+    this.storage.get('produtosSelecionados').then((produtos: Produto[]) => {
+      if (produtos) {
+        this.produtosSelecionados = produtos;
+        this.produtosListaCompras = this.produtosSelecionados.filter(produto => produto.visivel);
+      }
+    });
+  }
+  
+  adicionarProduto() {
+    if (this.novoProduto) {
+      const novoProduto: Produto = { nome: this.novoProduto, visivel: true };
+      this.produtosSelecionados.push(novoProduto);
+      this.novoProduto = '';
+      this.salvarSelecionados();
+    }
+  }
+
+  salvarSelecionados() {
+    this.storage.set('produtosSelecionados', this.produtosSelecionados);
+    this.produtosListaCompras = this.produtosSelecionados.filter(produto => produto.visivel);
+  }
+
+  removerProduto(produto: Produto) {
+    this.produtosSelecionados = this.produtosSelecionados.filter(p => p !== produto);
+    this.salvarSelecionados();
+  }
+  
+}
+
+<ion-card id="card" *ngFor="let produto of produtosSelecionados">
+    <ion-item-sliding  color="primary">
+      <ion-item color="tertiary">
+        <ion-label>{{ produto }}</ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="removerProduto(produto)">
+          <ion-icon slot="start" name="trash"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+
+  <ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick('home/ajuda')">
+        <ion-icon name="help" id="help_icon" slot="end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Lista de compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="primary">
+  <ion-card id="card" *ngFor="let produto of produtosSelecionados">
+    <ion-item-sliding  color="primary">
+      <ion-item color="tertiary">
+        <ion-label>{{ produto }}</ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="removerProduto(produto)">
+          <ion-icon slot="start" name="trash"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+  
+  <ion-footer>
+    <ion-toolbar id="card">
+      <ion-item  color="secondary">
+        <ion-input placeholder="Novo produto" [(ngModel)]="novoProduto"></ion-input>
+        <ion-button color="primary" slot="end" (click)="adicionarProduto()">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>
