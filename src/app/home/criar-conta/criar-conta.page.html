@@ -72,11 +72,10 @@
         </ion-col>
       </ion-row>
       <div class="alert-container">
-        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="mensagem">
-          Utilizador criado com<strong> sucesso</strong>, voltar à
-          <button (click)="removeMensagem()" type="button" data-bs-dismiss="alert" aria-label="Close"> página inicial</button>
+        <div class="alert alert-success" *ngIf="mensagem">
+          Utilizador criado com sucesso. Clique <a href="/home" class="link-home">aqui</a>, para voltar à página inicial.
         </div>
-      </div>
+      </div>      
     </form>
   </div>
 </ion-content>
