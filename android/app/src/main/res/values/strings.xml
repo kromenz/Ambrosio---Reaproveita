@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Reaproveita</string>
+    <string name="title_activity_main">Reaproveita</string>
+    <string name="package_name">pt.ambrosio.reaproveitaapp</string>
+    <string name="custom_url_scheme">pt.ambrosio.reaproveitaapp</string>
+</resources>

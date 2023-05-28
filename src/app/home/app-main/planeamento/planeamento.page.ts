@@ -53,32 +53,32 @@ export class PlaneamentoPage implements OnInit {
   
 
   increment(produto: string, qtdComprada: number, qtdInput: number) {
-  const url = 'http://localhost:3000/planeamento';
-  
-  this.http.get<any>(url)
-    .subscribe((data) => {
-      const itemEncontrado = data.find((item: any) => item.produto === produto);
+    const url = 'http://localhost:3000/planeamento';
+    
+    this.http.get<any>(url)
+      .subscribe((data) => {
+        const itemEncontrado = data.find((item: any) => item.produto === produto);
 
-      if (itemEncontrado) {
-        const itemId = itemEncontrado.id;
-        const updatedItem = {
-          ...itemEncontrado,
-          qtdComprada: itemEncontrado.qtdComprada + qtdInput,
-        };
+        if (itemEncontrado) {
+          const itemId = itemEncontrado.id;
+          const updatedItem = {
+            ...itemEncontrado,
+            qtdComprada: itemEncontrado.qtdComprada + qtdInput,
+          };
 
-        this.http.patch<any>(`${url}/${itemId}`, updatedItem)
-          .subscribe((response) => {
-            console.log('Dados atualizados com sucesso:', response);
-          }, (error) => {
-            console.log('Erro ao atualizar os dados:', error);
-          });
-      } else {
-        console.log('Produto não encontrado');
-      }
-    }, (error) => {
-      console.log('Erro ao obter os dados:', error);
-    });
-}
+          this.http.patch<any>(`${url}/${itemId}`, updatedItem)
+            .subscribe((response) => {
+              console.log('Dados atualizados com sucesso:', response);
+            }, (error) => {
+              console.log('Erro ao atualizar os dados:', error);
+            });
+        } else {
+          console.log('Produto não encontrado');
+        }
+      }, (error) => {
+        console.log('Erro ao obter os dados:', error);
+      });
+  }
 
   decrement(produto: string, qtdConsumida: number, qtdInput: number) {
     if (qtdInput > 0) {

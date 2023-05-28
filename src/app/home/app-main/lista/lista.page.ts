@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonAccordionGroup } from '@ionic/angular';
+import { IonAccordionGroup} from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 export interface List {
   produtos: string[];
@@ -15,7 +17,7 @@ export interface List {
   templateUrl: './lista.page.html',
   styleUrls: ['./lista.page.scss'],
 })
-export class ListaPage implements OnInit {
+export class ListaPage implements OnInit, ViewWillEnter {
   listaProdutos: any[] = [];
   selectedProdutos: any[] = [];
   selectedProducts: string[] = [];
@@ -33,6 +35,8 @@ export class ListaPage implements OnInit {
 
   ionViewWillEnter() {
     this.atualizarProdutosSelecionados();
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
   }
   
   onClick(x: any) {

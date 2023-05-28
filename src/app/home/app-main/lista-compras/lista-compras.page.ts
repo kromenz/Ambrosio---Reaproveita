@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 interface Produto {
   nome: string;
@@ -12,7 +14,7 @@ interface Produto {
   templateUrl: 'lista-compras.page.html',
   styleUrls: ['lista-compras.page.scss']
 })
-export class ListaComprasPage {
+export class ListaComprasPage implements ViewWillEnter{
   voltandoAtras: boolean = false;
 
   produtosSelecionados: Produto[] = [];
@@ -42,6 +44,9 @@ export class ListaComprasPage {
         produto.visivel = false;
       }
     });
+
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
   }
   
   onClick(x: any) {

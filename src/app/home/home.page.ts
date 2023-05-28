@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements ViewWillEnter{
 
   logForm: FormGroup;
   isSubmitted: boolean;
@@ -27,7 +29,9 @@ export class HomePage {
     this.isSubmitted = false;
   }
 
-  ngOnInit() {
+  ionViewWillEnter(): void {
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
   }
 
   async submitForm() {
