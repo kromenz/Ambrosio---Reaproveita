@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 @Component({
   selector: 'app-ajuda',
   templateUrl: './ajuda.page.html',
   styleUrls: ['./ajuda.page.scss'],
 })
-export class AjudaPage implements OnInit {
+export class AjudaPage implements OnInit,ViewWillEnter {
 
   helpForm: FormGroup;
   isSubmitted: boolean;
@@ -22,6 +24,11 @@ export class AjudaPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(): void {
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
   }
 
   submitForm() {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./criar-conta.page.scss'],
 })
 
-export class CriarContaPage implements OnInit {
+export class CriarContaPage implements OnInit,ViewWillEnter {
 
   CriarForm: FormGroup;
   isSubmitted: boolean;
@@ -66,6 +68,11 @@ export class CriarContaPage implements OnInit {
   removeMensagem(){
     this.mensagem = false;
     this.router.navigate(['/home']);
+  }
+
+  ionViewWillEnter(): void {
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
   }
 
 }

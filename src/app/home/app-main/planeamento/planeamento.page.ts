@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 interface Plan {
   produto: string;
@@ -16,7 +18,7 @@ interface Plan {
   templateUrl: './planeamento.page.html',
   styleUrls: ['./planeamento.page.scss'],
 })
-export class PlaneamentoPage implements OnInit {
+export class PlaneamentoPage implements OnInit,ViewWillEnter {
 
   public dataPlan: Plan [] = []
 
@@ -143,7 +145,10 @@ export class PlaneamentoPage implements OnInit {
     });
   }
   
-
+  ionViewWillEnter(): void {
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
+  }
   
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { ScreenOrientation, OrientationLockOptions } from '@capacitor/screen-orientation';
+import { ViewWillEnter } from '@ionic/angular';
 
 interface Prods {
   nome: string;
@@ -14,7 +16,7 @@ interface Prods {
   styleUrls: ['./produtos.page.scss'],
 })
 
-export class ProdutosPage implements OnInit {
+export class ProdutosPage implements OnInit,ViewWillEnter {
   @ViewChild('popover')
   popover!: { event: Event };
   public dataProds: Prods[] = [];
@@ -110,5 +112,10 @@ export class ProdutosPage implements OnInit {
     }
     return 0; // Retornar 0 se não houver um valor numérico válido
   }  
+
+  ionViewWillEnter(): void {
+    const options: OrientationLockOptions = { orientation: 'portrait' };
+    ScreenOrientation.lock(options);
+  }
    
 }
