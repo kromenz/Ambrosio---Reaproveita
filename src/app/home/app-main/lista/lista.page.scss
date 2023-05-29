@@ -48,21 +48,61 @@
     background-color: var(--ion-color-tertiary);
   }
 
-
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+  }
+  
   #VerLista {
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 15%;
+
     --color:#36230d;
 
     --background: #c6935a; /* Cor de fundo do botão (substitua #ff0000 pela cor desejada) */
     --border-color: #36230d;
     --border-style: solid;
-    --border-radius: 10px; /* Raio da borda do botão (substitua 10px pelo valor desejado) */
-    --border-width: 5px; /* Espessura da borda do botão (substitua 2px pelo valor desejado) */
-    position: fixed; /* Posicionamento absoluto do botão */
-    top: 94%; /* Posição vertical do botão (substitua 100px pelo valor desejado) */
-    left: 50%;
-  transform: translate(-50%, -50%); /* Posição horizontal do botão (substitua 200px pelo valor desejado) */
-  }
+    --border-radius: 10px; // Raio da borda do botão (substitua 10px pelo valor desejado) /
+    --border-width: 5px; // Espessura da borda do botão (substitua 2px pelo valor desejado) /
 
+  }
+    
+  #Lista {
+    width: 40px;
+    height: 40px;
+  
+    --background: var(--ion-color-background2);
+    --background-hover: var(--ion-color-background2-contrast);
+    --background-activated: var(--ion-color-background2);
+    --background-focused: var(--ion-color-background2);
+  
+    --color: var(--ion-color-castanhochocolate);
+  
+    --border-radius: 50%;
+    --border-color: var(--ion-color-castanhochocolate);
+    --border-style: solid;
+    --border-width: 3px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: var(--ion-color-background2-contrast);
+  
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    position: fixed;
+    top: 40%;
+    right: 2px;
+    transform: translateY(-50%);
+  }
+  
+  #lista_icon {
+    transform: scale(5); /* Ajuste o tamanho do ícone */
+    font-weight: bold;
+  }  
 
   .accordion-header {
     background-size: cover; /* Ajusta o tamanho do plano de fundo para cobrir o espaço disponível */
@@ -70,14 +110,27 @@
     background-repeat: no-repeat; /* Impede a repetição da imagem no plano de fundo */
     border-radius: 10px; /* Define o raio do canto do elemento ion-item */
     height: 120px; /* Define a altura desejada para o accordion */
-    
-    
+
   }
   
   #card{
     background: #e7d9c7;
     border: 5px solid #694d2b;
     border-radius: 20px;
+  }
+
+  #card2{
+    --background: #c6935a;
+      border: 5px solid #36230d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 190px; /* Ajuste a largura conforme necessário */
+      height: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      border-radius: 20px;
   }
   
   .accordion-image {

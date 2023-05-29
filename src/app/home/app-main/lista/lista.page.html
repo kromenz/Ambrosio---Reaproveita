@@ -11,36 +11,46 @@
         <h2 class="centered-p">Lista de Compras</h2>
       </ion-title>
     </ion-row>
+    
+    <div>
+      <ion-button [routerLink]="('../lista-compras')" id="Lista" (click)="salvarSelecionados()">
+        <ion-icon slot="icon-only" id="lista_icon" name="list-outline"></ion-icon>
+      </ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="primary">
+<ion-content color="primary" class="content-container">
+
+  <div >
+    <ion-button [routerLink]="('../lista-compras')" size="large" strong="true" id="VerLista" (click)="salvarSelecionados()">
+      Ver Lista
+    </ion-button>
+  </div>
   <ion-grid>
     <ion-row>
       <ion-col>
         <ion-card id="card">
-        <ion-accordion-group id="acordgroup" expand="inset" multiple="true">
-          <ion-accordion *ngFor="let prod of dataList">
-            <ion-item slot="header" color="secondary" class="accordion-header" style="background-image: url({{prod.imagem}});">
-              <ion-label class="ion-text-center">{{prod.categoria}}
-              </ion-label>
-            </ion-item>
-            <div class="ion-padding" class="ion-padding custom-color" slot="content">
-              <ion-list>
-                <ng-container *ngFor="let produto of prod.produtos">
-                  <ion-item color="tertiary" class="custom-checkbox">  
-                    <ion-checkbox [checked]="selectedProducts.includes(produto)" (ionChange)="selecionarProduto(produto)">{{produto}}</ion-checkbox>
-                  </ion-item>
-                </ng-container>
-              </ion-list>
-            </div>
-          </ion-accordion>
-      </ion-accordion-group>
-    </ion-card>
+          <ion-accordion-group id="acordgroup" expand="inset" multiple="true">
+            <ion-accordion *ngFor="let prod of dataList">
+              <ion-item slot="header" color="secondary" class="accordion-header" style="background-image: url({{prod.imagem}});">
+                <ion-label class="ion-text-center">{{prod.categoria}}
+                </ion-label>
+              </ion-item>
+              <div class="ion-padding" class="ion-padding custom-color" slot="content">
+                <ion-list>
+                  <ng-container *ngFor="let produto of prod.produtos">
+                    <ion-item color="tertiary" class="custom-checkbox">  
+                      <ion-checkbox [checked]="selectedProducts.includes(produto)" (ionChange)="selecionarProduto(produto)">{{produto}}</ion-checkbox>
+                    </ion-item>
+                  </ng-container>
+                </ion-list>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
-  <ion-button [routerLink]="('../lista-compras')" id="VerLista" size="large" strong="true" (click)="salvarSelecionados()">Ver Lista</ion-button>
   
 </ion-content>
