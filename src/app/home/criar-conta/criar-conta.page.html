@@ -63,7 +63,7 @@
         Password é de preenchimento obrigatório
       </ion-text>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && CriarForm.controls['password'].errors?.['pattern']">
-        Password inválida
+        Password tem de ter pelo menos 6 caracteres
       </ion-text> 
       
       <ion-row>
